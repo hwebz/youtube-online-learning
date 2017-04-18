@@ -1,0 +1,9 @@
+rvm use --default 2.2
+gem update rails --no-ri --no-rdoc
+ruby -v
+rails -v (gem install rails)
+gem install compass
+sass -v
+compass -v
+compass create test-1 (compass create --sass-dir "sass" -css-dir "css" -javascript-dir "js" -images-dir "images")
+compass watch (compass compile)

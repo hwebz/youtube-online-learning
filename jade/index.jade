@@ -1,0 +1,147 @@
+doctype
+//- doctype frameset
+//- doctype transitional
+//- doctype mobile
+html
+    include ./head.jade
+    body
+        div
+            p
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere dolorum nostrum in necessitatibus ipsum vero nam, optio nesciunt suscipit fuga ipsam debitis asperiores minima amet minus exercitationem laborum numquam praesentium.
+            | Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis adipisci voluptatibus id veniam ut ad necessitatibus, dolorem, ducimus deleniti iste. Distinctio eligendi necessitatibus doloremque laborum? Dolores assumenda facilis fugiat impedit.
+            p.
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veritatis tempore omnis odio, dolore possimus aliquid assumenda, ab sunt eligendi ad, voluptatum rerum nostrum quam porro eaque sapiente atque non commodi.
+            p(id="4th", class="lorem_ipsum very_import")
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias, iure, at, temporibus sit quaerat perspiciatis voluptates odit quas debitis porro, doloremque explicabo ullam! Placeat earum reiciendis, neque laboriosam libero optio?
+            #end_div.lorem_ipsum.very_import
+             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Hic corrupti eos aliquid quasi, dolores ullam voluptate eligendi deserunt saepe perferendis? Porro saepe, eum praesentium? Sunt numquam reprehenderit, sint iste? Fugit?
+            
+            ul
+                li#bbp_list_item
+                    a(href="#") Barry Bonds
+                li#bbp_list_item
+                    a(href="#") Hank Aaron
+                li#bbp_list_item
+                    a(href="#") Babe Ruth
+
+            ul
+                li#hero_list_item: a(href="#") Batman
+                li#hero_list_item: a(href="#") Superman
+                li#hero_list_item: a(href="#") The Flash
+            
+            //- Can't see me
+
+            - myName = "JD"
+
+            p Hello #{myName}
+
+            p 1234 * 6789 = #{1234 * 6789}
+
+            - website = "http://google.com"
+
+            a(href="#{website}") Google
+
+            - heroes = ['Wonder Woman', 'Super Girl', 'Bat Girl']
+
+            ul
+                li#hero_list_item: a(href="#") #{heroes[0]}
+                li#hero_list_item: a(href="#") #{heroes[1]}
+                li#hero_list_item: a(href="#") #{heroes[2]}
+
+            - bq = "blockquote"
+
+            #{bq} A Bad Idea
+
+            - batmanData = "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe quia ab tempora maiores reprehenderit provident sint, officia beatae inventore quidem. Sed temporibus, architecto sint molestiae dolore sit velit fugit est!"
+
+            p= batmanData
+
+            - fnI = {"type": "text", "name": "fName"}
+
+            span First name
+            input(type=fnI.type, name=fnI.name)
+
+            - someInfo = "<i>Very Interesting</i>"
+
+            p= someInfo
+
+            p !{someInfo}
+
+            - date = new Date()
+            - hour = date.getHours()
+
+            - if ((hour >= 6) && (hour <= 17)) {
+                h3 Day Time
+            - } else {
+                h3 Night Time
+            - }
+
+            - age = 18
+
+            if ((age >= 16) && (age < 18))
+                h3 You can drive
+            else if age >= 18
+                h3 You can drive and vote
+            else
+                h3 To can wait till you're 16
+
+            unless age >= 16
+                h3 You'll drive at 16
+            else
+                h3 You can drive
+
+            - dayTime = (((hour >= 6) && (hour <= 17)) ? 'Day Time' : 'Night Time')
+
+            h3 #{dayTime}
+
+            - name = "Sue"
+
+            case name
+                when "Sally"
+                    h3 Hi Sally
+                when "Sue"
+                    h3 Hi Sue
+                default
+                    h3 Hi You
+
+            script.
+                console.log('Hello Jade')
+
+            - qbs = ['Palmer', 'Bress', 'Rivers', 'Brady']
+
+            ul
+                - for (i = 0; i < qbs.length; i++) {
+                    li= qbs[i]
+                - }
+            ul
+                each qb in qbs
+                    li= qb
+
+            - i = 0
+
+            ul
+                while i <= 20
+                    li= i
+                    - i++;
+
+            mixin nflPlayer(name, pos, team)
+                li #{name} is the #{pos} for the #{team}
+
+            ul#nflPlayers
+                +nflPlayer("Tombrady", "Quarterback", "Patriots")
+                +nflPlayer("Payton Manning", "Quarterback", "Broncos")
+
+            mixin copyr
+                | &#169;
+
+            p
+                +copyr
+                | 2016
+            
+            mixin makeList()
+                ul
+                    - args = Array.prototype.slice.call(arguments);
+                    for item in args
+                        li= item
+            +makeList("Dob", "Cat", "Fish")
+                    
