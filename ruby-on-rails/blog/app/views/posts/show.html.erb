@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 mb-5">
+      <h2><%= @post.title %></h2>
+      <p><%= @post.body %></p>
+
+      <%= link_to 'Edit', edit_post_path(@post), {:class => 'btn btn-primary'} %>
+      <%= link_to 'Delete', post_path(@post), method: :delete, data: {confirm: 'Are you sure?'}, :class => 'btn btn-danger ml-1' %>
+    </div>
+    <div class="col-md-12">
+      <%= render 'comments/comments' %>
+      <%= render 'comments/form' %>
+    </div>
+  </div>
+</div>

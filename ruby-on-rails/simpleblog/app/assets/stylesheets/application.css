@@ -1,0 +1,102 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+a:hover {
+    color: #007ebd;
+    background-color: #fff;
+}
+
+p {
+    margin: 0 0 10px 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-bottom: 20px;
+    margin-top: 0;
+}
+
+body {
+    background: #5D8AA8;
+}
+
+div#wrapper {
+    margin: auto;
+    background: white;
+    width: 800px;
+    height: 2000px;
+}
+
+header {
+    display: block;
+    padding: 10px;
+}
+
+header img {
+    width: 220px;
+    margin: auto;
+    display: block;
+}
+
+.websiteTitle {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 25px;
+    text-align: center;
+    margin: 15px;
+    display: block;
+}
+
+nav#horzNav p {
+    display: inline-block;
+    margin: 10px;
+}
+
+main#content {
+    border: 1px solid black;
+    margin: 10px;
+    padding: 10px;
+}
+
+input[type="text"],
+input[type="number"],
+textarea {
+    padding: 10px;
+    width: 200px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+}
+
+input[type="submit"],
+button {
+    border: 1px solid white;
+    background-color: #007ebd;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 992px) {
+    div#wrapper {
+        width: 500px;
+    }
+}
